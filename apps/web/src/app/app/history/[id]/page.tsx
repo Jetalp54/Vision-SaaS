@@ -1,6 +1,10 @@
 'use client';
 
-export const dynamic = 'force-dynamic';
+// Required for Next.js static export (output: 'export').
+// Data is fetched client-side via useParams() + API calls at runtime.
+export function generateStaticParams() {
+  return [];
+}
 
 import { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'next/navigation';
