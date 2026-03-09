@@ -14,13 +14,13 @@ name = "vision-saas-api-dev"
 [[env.development.d1_databases]]
 binding = "DB"
 database_name = "vision-saas-db"
-database_id = "009763b6-4195-4b38-b8f2-207ee6686595"
-preview_database_id = "009763b6-4195-4b38-b8f2-207ee6686595"
+database_id = "757aa71c-3e88-4942-be97-ead5c4de9d97"
+preview_database_id = "757aa71c-3e88-4942-be97-ead5c4de9d97"
 
 [[env.development.kv_namespaces]]
 binding = "METADATA_KV"
-id = "491ff89e5b1b4551b66492df3536cf5b"
-preview_id = "48e50782f4d34a84a85a3ac2eab24177"
+id = "a0c560a341394226971a2ca05d474ef0"
+preview_id = "08a0da10f42a4096af7bf8bafa1fcbf3"
 
 [[env.development.r2_buckets]]
 binding = "IMAGES_BUCKET"
@@ -34,7 +34,7 @@ binding = "AI"
 ENVIRONMENT = "development"
 AI_GATEWAY_ACCOUNT_ID = "8ec9c2ec64b71344b4750c357dfca2bd"
 AI_GATEWAY_ID = "f1"
-R2_PUBLIC_URL = "https://your-r2-preview.r2.dev"
+R2_PUBLIC_URL = "https://pub-6679b7f9b2f84f50b86317235616b90b.r2.dev"
 CORS_ORIGIN = "http://localhost:3000"
 
 
@@ -45,13 +45,13 @@ name = "vision-saas-api-staging"
 [[env.staging.d1_databases]]
 binding = "DB"
 database_name = "vision-saas-db"
-database_id = "009763b6-4195-4b38-b8f2-207ee6686595"
-preview_database_id = "009763b6-4195-4b38-b8f2-207ee6686595"
+database_id = "757aa71c-3e88-4942-be97-ead5c4de9d97"
+preview_database_id = "757aa71c-3e88-4942-be97-ead5c4de9d97"
 
 [[env.staging.kv_namespaces]]
 binding = "METADATA_KV"
-id = "491ff89e5b1b4551b66492df3536cf5b"
-preview_id = "48e50782f4d34a84a85a3ac2eab24177"
+id = "a0c560a341394226971a2ca05d474ef0"
+preview_id = "08a0da10f42a4096af7bf8bafa1fcbf3"
 
 [[env.staging.r2_buckets]]
 binding = "IMAGES_BUCKET"
@@ -63,9 +63,9 @@ binding = "AI"
 
 [env.staging.vars]
 ENVIRONMENT = "staging"
-AI_GATEWAY_ACCOUNT_ID = "YOUR_CLOUDFLARE_ACCOUNT_ID"
-AI_GATEWAY_ID = "YOUR_AI_GATEWAY_SLUG"
-R2_PUBLIC_URL = "https://your-r2-preview.r2.dev"
+AI_GATEWAY_ACCOUNT_ID = "8ec9c2ec64b71344b4750c357dfca2bd"
+AI_GATEWAY_ID = "f1"
+R2_PUBLIC_URL = "https://pub-6679b7f9b2f84f50b86317235616b90b.r2.dev"
 CORS_ORIGIN = "https://staging.vision-saas.dev"
 
 
@@ -76,11 +76,11 @@ name = "vision-saas-api"
 [[env.production.d1_databases]]
 binding = "DB"
 database_name = "vision-saas-db"
-database_id = "009763b6-4195-4b38-b8f2-207ee6686595"
+database_id = "757aa71c-3e88-4942-be97-ead5c4de9d97"
 
 [[env.production.kv_namespaces]]
 binding = "METADATA_KV"
-id = "491ff89e5b1b4551b66492df3536cf5b"
+id = "a0c560a341394226971a2ca05d474ef0"
 
 [[env.production.r2_buckets]]
 binding = "IMAGES_BUCKET"
@@ -93,6 +93,5 @@ binding = "AI"
 ENVIRONMENT = "production"
 AI_GATEWAY_ACCOUNT_ID = "8ec9c2ec64b71344b4750c357dfca2bd"
 AI_GATEWAY_ID = "f1"
-R2_PUBLIC_URL = "https://your-r2-public.r2.dev"
+R2_PUBLIC_URL = "https://pub-6679b7f9b2f84f50b86317235616b90b.r2.dev"
 CORS_ORIGIN = "https://vision-saas.dev"
-
