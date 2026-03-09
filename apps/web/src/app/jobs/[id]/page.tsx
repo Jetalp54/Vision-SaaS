@@ -1,12 +1,12 @@
-// Redirects legacy /jobs/[id] route to the new /app/history/[id] route
-import { redirect } from 'next/navigation';
+// Server component — required for generateStaticParams with static export.
+// Redirects legacy /jobs/[id] to /app/history/[id] via client-side navigation.
+import JobDetailRedirectClient from './JobDetailRedirectClient';
 
 // Required for Next.js static export (output: 'export').
 export function generateStaticParams() {
   return [];
 }
 
-export default async function JobDetailRedirect({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
-  redirect(`/app/history/${id}`);
+export default function JobDetailPage() {
+  return <JobDetailRedirectClient />;
 }
