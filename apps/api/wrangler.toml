@@ -2,6 +2,7 @@ name = "vision-saas-api"
 main = "src/index.ts"
 compatibility_date = "2024-12-30"
 compatibility_flags = ["nodejs_compat"]
+account_id = "8ec9c2ec64b71344b4750c357dfca2bd"
 
 # ── Observability ──────────────────────────────────────────────────────────────
 [observability]
@@ -33,9 +34,13 @@ binding = "AI"
 [env.development.vars]
 ENVIRONMENT = "development"
 AI_GATEWAY_ACCOUNT_ID = "8ec9c2ec64b71344b4750c357dfca2bd"
-AI_GATEWAY_ID = "f1"
+AI_GATEWAY_ID = "vision-saas-gateway"
 R2_PUBLIC_URL = "https://pub-6679b7f9b2f84f50b86317235616b90b.r2.dev"
 CORS_ORIGIN = "http://localhost:3000"
+
+# ── Secrets (set via `wrangler secret put <NAME> --env development`) ───────────
+# R2_ACCESS_KEY_ID        — R2 S3-compatible API access key
+# R2_SECRET_ACCESS_KEY    — R2 S3-compatible API secret key
 
 
 # ── Staging Environment ────────────────────────────────────────────────────────
@@ -64,9 +69,15 @@ binding = "AI"
 [env.staging.vars]
 ENVIRONMENT = "staging"
 AI_GATEWAY_ACCOUNT_ID = "8ec9c2ec64b71344b4750c357dfca2bd"
-AI_GATEWAY_ID = "f1"
+AI_GATEWAY_ID = "vision-saas-gateway"
 R2_PUBLIC_URL = "https://pub-6679b7f9b2f84f50b86317235616b90b.r2.dev"
 CORS_ORIGIN = "https://staging.vision-saas.dev"
+
+# ── Secrets (set via `wrangler secret put <NAME> --env staging`) ───────────────
+# CF_ACCESS_TEAM_DOMAIN   — your Zero Trust team domain (e.g. myteam)
+# CF_ACCESS_AUD           — Cloudflare Access Application Audience tag
+# R2_ACCESS_KEY_ID        — R2 S3-compatible API access key
+# R2_SECRET_ACCESS_KEY    — R2 S3-compatible API secret key
 
 
 # ── Production Environment ─────────────────────────────────────────────────────
@@ -75,12 +86,12 @@ name = "vision-saas-api"
 
 [[env.production.d1_databases]]
 binding = "DB"
-database_name = "vision-saas-db"
-database_id = "757aa71c-3e88-4942-be97-ead5c4de9d97"
+database_name = "vision-saas-db-prod"
+database_id = "009763b6-4195-4b38-b8f2-207ee6686595"
 
 [[env.production.kv_namespaces]]
 binding = "METADATA_KV"
-id = "a0c560a341394226971a2ca05d474ef0"
+id = "491ff89e5b1b4551b66492df3536cf5b"
 
 [[env.production.r2_buckets]]
 binding = "IMAGES_BUCKET"
@@ -92,6 +103,12 @@ binding = "AI"
 [env.production.vars]
 ENVIRONMENT = "production"
 AI_GATEWAY_ACCOUNT_ID = "8ec9c2ec64b71344b4750c357dfca2bd"
-AI_GATEWAY_ID = "f1"
+AI_GATEWAY_ID = "vision-saas-gateway"
 R2_PUBLIC_URL = "https://pub-6679b7f9b2f84f50b86317235616b90b.r2.dev"
 CORS_ORIGIN = "https://vision-saas.dev"
+
+# ── Secrets (set via `wrangler secret put <NAME> --env production`) ────────────
+# CF_ACCESS_TEAM_DOMAIN   — your Zero Trust team domain (e.g. myteam)
+# CF_ACCESS_AUD           — Cloudflare Access Application Audience tag
+# R2_ACCESS_KEY_ID        — R2 S3-compatible API access key
+# R2_SECRET_ACCESS_KEY    — R2 S3-compatible API secret key

@@ -10,8 +10,8 @@
     "type-check": "tsc --noEmit",
     "lint": "eslint src --ext .ts",
     "db:generate": "drizzle-kit generate",
-    "db:migrate:local": "wrangler d1 migrations apply vision-saas-db --local",
-    "db:migrate:prod": "wrangler d1 migrations apply vision-saas-db --remote"
+    "db:migrate:local": "wrangler d1 migrations apply DB --local --env development",
+    "db:migrate:prod": "wrangler d1 migrations apply DB --remote --env production"
   },
   "dependencies": {
     "@cloudflare/ai": "^1.0.53",

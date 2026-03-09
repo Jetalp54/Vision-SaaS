@@ -2,6 +2,7 @@ name = "vision-saas-web"
 compatibility_date = "2024-12-30"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = "out"
+account_id = "8ec9c2ec64b71344b4750c357dfca2bd"
 
 # ── Environment Variables ──────────────────────────────────────────────────────
 # Set these as encrypted secrets in the Cloudflare Pages dashboard or via:
