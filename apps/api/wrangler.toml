@@ -1,0 +1,98 @@
+name = "vision-saas-api"
+main = "src/index.ts"
+compatibility_date = "2024-12-30"
+compatibility_flags = ["nodejs_compat"]
+
+# ── Observability ──────────────────────────────────────────────────────────────
+[observability]
+enabled = true
+
+# ── Development Environment ────────────────────────────────────────────────────
+[env.development]
+name = "vision-saas-api-dev"
+
+[[env.development.d1_databases]]
+binding = "DB"
+database_name = "vision-saas-db"
+database_id = "009763b6-4195-4b38-b8f2-207ee6686595"
+preview_database_id = "009763b6-4195-4b38-b8f2-207ee6686595"
+
+[[env.development.kv_namespaces]]
+binding = "METADATA_KV"
+id = "491ff89e5b1b4551b66492df3536cf5b"
+preview_id = "48e50782f4d34a84a85a3ac2eab24177"
+
+[[env.development.r2_buckets]]
+binding = "IMAGES_BUCKET"
+bucket_name = "vision-saas-images-preview"
+preview_bucket_name = "vision-saas-images-preview"
+
+[env.development.ai]
+binding = "AI"
+
+[env.development.vars]
+ENVIRONMENT = "development"
+AI_GATEWAY_ACCOUNT_ID = "8ec9c2ec64b71344b4750c357dfca2bd"
+AI_GATEWAY_ID = "f1"
+R2_PUBLIC_URL = "https://your-r2-preview.r2.dev"
+CORS_ORIGIN = "http://localhost:3000"
+
+
+# ── Staging Environment ────────────────────────────────────────────────────────
+[env.staging]
+name = "vision-saas-api-staging"
+
+[[env.staging.d1_databases]]
+binding = "DB"
+database_name = "vision-saas-db"
+database_id = "009763b6-4195-4b38-b8f2-207ee6686595"
+preview_database_id = "009763b6-4195-4b38-b8f2-207ee6686595"
+
+[[env.staging.kv_namespaces]]
+binding = "METADATA_KV"
+id = "491ff89e5b1b4551b66492df3536cf5b"
+preview_id = "48e50782f4d34a84a85a3ac2eab24177"
+
+[[env.staging.r2_buckets]]
+binding = "IMAGES_BUCKET"
+bucket_name = "vision-saas-images-preview"
+preview_bucket_name = "vision-saas-images-preview"
+
+[env.staging.ai]
+binding = "AI"
+
+[env.staging.vars]
+ENVIRONMENT = "staging"
+AI_GATEWAY_ACCOUNT_ID = "YOUR_CLOUDFLARE_ACCOUNT_ID"
+AI_GATEWAY_ID = "YOUR_AI_GATEWAY_SLUG"
+R2_PUBLIC_URL = "https://your-r2-preview.r2.dev"
+CORS_ORIGIN = "https://staging.vision-saas.dev"
+
+
+# ── Production Environment ─────────────────────────────────────────────────────
+[env.production]
+name = "vision-saas-api"
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "vision-saas-db"
+database_id = "009763b6-4195-4b38-b8f2-207ee6686595"
+
+[[env.production.kv_namespaces]]
+binding = "METADATA_KV"
+id = "491ff89e5b1b4551b66492df3536cf5b"
+
+[[env.production.r2_buckets]]
+binding = "IMAGES_BUCKET"
+bucket_name = "vision-saas-images"
+
+[env.production.ai]
+binding = "AI"
+
+[env.production.vars]
+ENVIRONMENT = "production"
+AI_GATEWAY_ACCOUNT_ID = "8ec9c2ec64b71344b4750c357dfca2bd"
+AI_GATEWAY_ID = "f1"
+R2_PUBLIC_URL = "https://your-r2-public.r2.dev"
+CORS_ORIGIN = "https://vision-saas.dev"
+

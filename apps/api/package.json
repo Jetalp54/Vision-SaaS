@@ -1,0 +1,31 @@
+{
+  "name": "@vision-saas/api",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev --env development",
+    "build": "tsc --noEmit",
+    "deploy": "wrangler deploy --env production",
+    "deploy:staging": "wrangler deploy --env staging",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src --ext .ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate:local": "wrangler d1 migrations apply vision-saas-db --local",
+    "db:migrate:prod": "wrangler d1 migrations apply vision-saas-db --remote"
+  },
+  "dependencies": {
+    "@cloudflare/ai": "^1.0.53",
+    "@hono/zod-validator": "^0.4.3",
+    "drizzle-orm": "^0.38.3",
+    "hono": "^4.6.20",
+    "ulid": "^2.3.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241230.0",
+    "@vision-saas/types": "*",
+    "drizzle-kit": "^0.31.9",
+    "typescript": "^5.7.3",
+    "wrangler": "^4.71.0"
+  }
+}

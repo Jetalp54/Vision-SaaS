@@ -1,0 +1,22 @@
+name = "vision-saas-web"
+compatibility_date = "2024-12-30"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "out"
+
+# ── Environment Variables ──────────────────────────────────────────────────────
+# Set these as encrypted secrets in the Cloudflare Pages dashboard or via:
+#   wrangler pages secret put NEXT_PUBLIC_API_URL
+
+[vars]
+NEXT_PUBLIC_API_URL        = "http://localhost:8787"
+NEXT_PUBLIC_R2_PUBLIC_URL  = "https://your-r2-public-url.r2.dev"
+
+# ── Preview (staging) ──────────────────────────────────────────────────────────
+[env.preview.vars]
+NEXT_PUBLIC_API_URL        = "https://vision-saas-api-staging.workers.dev"
+NEXT_PUBLIC_R2_PUBLIC_URL  = "https://your-r2-preview.r2.dev"
+
+# ── Production ─────────────────────────────────────────────────────────────────
+[env.production.vars]
+NEXT_PUBLIC_API_URL        = "https://api.vision-saas.dev"
+NEXT_PUBLIC_R2_PUBLIC_URL  = "https://assets.vision-saas.dev"
