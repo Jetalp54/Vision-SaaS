@@ -3,8 +3,12 @@
 import JobDetailRedirectClient from './JobDetailRedirectClient';
 
 // Required for Next.js static export (output: 'export').
+// dynamicParams = false + a placeholder param generates the static shell HTML.
+// The actual redirect happens client-side in JobDetailRedirectClient via useParams().
+export const dynamicParams = false;
+
 export function generateStaticParams() {
-  return [];
+  return [{ id: '_' }];
 }
 
 export default function JobDetailPage() {
